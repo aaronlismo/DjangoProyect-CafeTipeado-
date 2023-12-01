@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="has-text-centered has-navbar-fixed-bottom  is-family-code">
+
+    {% extends 'layouts/navbar.html' %}
+
+    {% load static %}
+
+    {% block content %}
+    <section class="section">
+        <div class="container">
+          <div class="tabs is-centered">
+            <ul>
+              <li class="is-active"><a id="#buttonLenguaje">Lenguajes Usados</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <div id="tab-content">
+          <section class="section has-background-info-light">
+            <div class="container">
+              <div class="columns is-vcentered">
+                <div class="column is-3">
+                  <h1 class="is-size-3-mobile is-size-1-desktop title">Bulma</h1>
+                  <h2 class="is-size-3-mobile is-size-2-desktop subtitle">Framework CSS</h2>
+                </div>
+                <div class="column is-5-desktop ">
+                  <img src="{% static 'bulma-logo.png'%}" alt="Logo de Bulma Css" class="px-6">
+                </div>
+                <div class="column is-4-desktop has-text-centered">
+                  <p>El Diseño de la página web , está realizado con este Framework debido a lo fácil y moderno que es comparado con otros como Bootstrap.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+    
+        <div class="section has-background-info-light">
+            <div class="container">
+              <div class="columns is-vcentered">
+                <div class="column is-3">
+                  <h1 class="is-size-3-mobile is-size-1-desktop title">Python</h1>
+                  <h2 class="is-size-3-mobile is-size-2-desktop subtitle">Lenguaje de Programación</h2>
+                </div>
+                <div class="column is-5-desktop ">
+                  <img src="{% static 'python-logo.png'%}" style="max-height: 400px;" alt="Logo de Python" class="px-6 ">
+                </div>
+                <div class="column is-4-desktop has-text-centered">
+                  <p>Lenguaje de programación usado</p>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="section has-background-info-light">
+            <div class="container">
+              <div class="columns is-vcentered">
+                <div class="column is-3">
+                  <h1 class="is-size-3-mobile is-size-1-desktop title">Django</h1>
+                  <h2 class="is-size-3-mobile is-size-2-desktop subtitle">Web Framework</h2>
+                </div>
+                <div class="column is-5-desktop ">
+                  <img src="{% static 'django-logo.png'%}" style="max-height: 400px;" alt="Logo de Python" class="px-6 ">
+                </div>
+                <div class="column is-4-desktop has-text-centered">
+                  <p>Framework escrito en lenguaje Python , que utiliza la arquitectura del MTV(Model-Template-View)</p>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        </div>
+  
+      </section>
+    {% endblock %}
+
+    {% block bar %}
+        {% include "layouts/footer.html" %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="has-text-centered has-navbar-fixed-bottom  is-family-code">
+
+    {% extends 'layouts/navbar.html' %}
+
+    {% block content %}
+    <h1 class="is-size-2 has-text-dark has-text-centered">
+        Proyectos
+    </h1>
+
+    {% for proyecto in proyectos %}
+        <article >
+            <h2 class="is-family-code has-text-primary">{{ proyecto.name }} </h2>
+        </article>    
+    {% endfor %}
+    {% endblock %}
+
+    {% block bar %}
+        {% include "layouts/footer.html" %}
+    {% endblock %}
+</body>
+</html>

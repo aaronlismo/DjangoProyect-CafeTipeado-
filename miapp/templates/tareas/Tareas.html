@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="has-text-centered has-navbar-fixed-bottom  is-family-code">
+    {% extends 'layouts/navbar.html' %}
+
+    {% block content %}
+    <h1 class="is-size-2 has-text-dark">
+       Tareas
+    </h1>
+
+    {% for tarea in tareas %}
+        <div class="card container mt-4">
+            <header class="card-header">
+                <h2 class="card-header-title">
+                {% if tarea.hecho == False %} 
+                    &#9201; 
+                {% else %}
+                    &#9989;
+                {% endif %}
+                {{tarea.titulo}}
+                </h2>
+            </header>
+
+            <div class="card-content has-background-link-light">
+                <div class="content">
+                    <h3>{{tarea.descripcion}}</h3>
+
+                    {% if tarea.hecho == False %}
+                        <p>Tarea Pendiente</p>
+        
+                    {% else %}
+                        <p>Tarea Realizada</p>
+                    {% endif %}
+        
+                    <p>Proyecto: {{tarea.proyecto.name}}</p>
+                </div>
+            </div>
+
+            <footer class="card-footer">
+                <button class="button mr-5">&#10060; Borrar</button>
+                <button class="button mr-5">&#10004; Hecho</button>
+            </footer>
+        </div>
+    {% endfor %}
+    {% endblock %}
+
+    {% block bar %}
+        {% include "layouts/footer.html" %}
+    {% endblock %}
+</body>
+</html>
